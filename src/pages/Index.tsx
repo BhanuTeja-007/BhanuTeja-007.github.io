@@ -5,6 +5,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
+  // Editable content - modify these values before publishing
+  const personalInfo = {
+    name: "BHANU TEJA PANGULURI",
+    title: "Software Engineer | Data Engineer | Data Analyst",
+    description: "I am a passionate software engineer with expertise in data engineering and analysis. I love building scalable solutions and extracting insights from complex datasets.",
+    email: "your.email@example.com",
+    linkedin: "https://linkedin.com/in/yourprofile",
+    github: "https://github.com/yourusername"
+  };
+
+  const education = {
+    masters: {
+      degree: "Master in Software Engineering",
+      university: "University of Maryland",
+      logo: "/placeholder.svg" // Replace with actual UMD logo
+    },
+    bachelors: {
+      degree: "Bachelor in Computer Science", 
+      university: "Your Bachelor University", // Edit this
+      logo: "/placeholder.svg" // Replace with actual university logo
+    }
+  };
+
   const skills = {
     languages: ["Python", "JavaScript", "SQL", "R", "Java"],
     dataScience: ["Machine Learning", "Deep Learning", "Statistical Analysis", "Data Visualization", "Pandas", "NumPy"],
@@ -16,42 +39,42 @@ const Index = () => {
       title: "Software Engineer",
       company: "University of Maryland",
       period: "Aug 2022 - Present",
-      description: "2-3 Line Summary of role and achievements"
+      description: "2-3 Line Summary of role and achievements" // Edit this
     },
     {
       title: "Data Engineer",
       company: "ZS Associates",
       period: "Aug 2021 - Jul 2022",
-      description: "2-3 Line Summary of role and achievements"
+      description: "2-3 Line Summary of role and achievements" // Edit this
     },
     {
       title: "SDE",
       company: "Freelance",
       period: "Jan 2021 - Aug 2021",
-      description: "2-3 Line Summary of role and achievements"
+      description: "2-3 Line Summary of role and achievements" // Edit this
     }
   ];
 
   const projects = [
     {
-      name: "Project One",
-      summary: "Brief project description (2 lines)",
-      link: "#"
+      name: "Project One", // Edit this
+      summary: "Brief project description (2 lines)", // Edit this
+      link: "#" // Add actual project link
     },
     {
-      name: "Project Two", 
-      summary: "Brief project description (2 lines)",
-      link: "#"
+      name: "Project Two", // Edit this
+      summary: "Brief project description (2 lines)", // Edit this
+      link: "#" // Add actual project link
     },
     {
-      name: "Project Three",
-      summary: "Brief project description (2 lines)", 
-      link: "#"
+      name: "Project Three", // Edit this
+      summary: "Brief project description (2 lines)", // Edit this
+      link: "#" // Add actual project link
     },
     {
-      name: "Project Four",
-      summary: "Brief project description (2 lines)",
-      link: "#"
+      name: "Project Four", // Edit this
+      summary: "Brief project description (2 lines)", // Edit this
+      link: "#" // Add actual project link
     }
   ];
 
@@ -62,7 +85,7 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              RHAND
+              BHANU
             </h1>
             <nav className="hidden md:flex space-x-8">
               <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
@@ -79,10 +102,10 @@ const Index = () => {
         <div className="container mx-auto px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-              RHAND TEJA PANKULET
+              {personalInfo.name}
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 mb-4">
-              Software Engineer | Data Engineer | Data Analyst
+              {personalInfo.title}
             </p>
             
             {/* Profile Image Placeholder */}
@@ -91,8 +114,7 @@ const Index = () => {
             </div>
 
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-              I am a passionate software engineer with expertise in data engineering and analysis. 
-              I love building scalable solutions and extracting insights from complex datasets.
+              {personalInfo.description}
             </p>
 
             {/* Social Links */}
@@ -253,18 +275,56 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 mb-4 md:mb-0">
-                © 2024 Rhand Teja Pankulet. All rights reserved.
-              </p>
-              <div className="flex space-x-6">
-                <p className="text-gray-400">University of Maryland</p>
-                <p className="text-gray-400">Master in Software Engineering</p>
+          <div className="border-t border-gray-800 pt-8">
+            {/* University Logos and Degrees */}
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-8">
+              {/* Masters */}
+              <div className="flex items-center gap-4 bg-gray-800 rounded-lg p-4">
+                <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
+                  <img 
+                    src={education.masters.logo} 
+                    alt={`${education.masters.university} Logo`}
+                    className="w-12 h-12 object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling!.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="hidden text-gray-500 text-xs text-center">Logo</div>
+                </div>
+                <div className="text-left">
+                  <p className="text-white font-semibold">{education.masters.degree}</p>
+                  <p className="text-gray-400 text-sm">{education.masters.university}</p>
+                </div>
+              </div>
+
+              {/* Bachelors */}
+              <div className="flex items-center gap-4 bg-gray-800 rounded-lg p-4">
+                <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
+                  <img 
+                    src={education.bachelors.logo} 
+                    alt={`${education.bachelors.university} Logo`}
+                    className="w-12 h-12 object-contain"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling!.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="hidden text-gray-500 text-xs text-center">Logo</div>
+                </div>
+                <div className="text-left">
+                  <p className="text-white font-semibold">{education.bachelors.degree}</p>
+                  <p className="text-gray-400 text-sm">{education.bachelors.university}</p>
+                </div>
               </div>
             </div>
-            <div className="mt-4">
-              <p className="text-gray-400">Bachelor in Computer Science</p>
+
+            <div className="text-center">
+              <p className="text-gray-400">
+                © 2024 {personalInfo.name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ')}. All rights reserved.
+              </p>
             </div>
           </div>
         </div>
