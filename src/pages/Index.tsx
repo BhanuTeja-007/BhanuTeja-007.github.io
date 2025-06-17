@@ -1,12 +1,274 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const Index = () => {
+  const skills = {
+    languages: ["Python", "JavaScript", "SQL", "R", "Java"],
+    dataScience: ["Machine Learning", "Deep Learning", "Statistical Analysis", "Data Visualization", "Pandas", "NumPy"],
+    tools: ["Git", "Docker", "AWS", "Tableau", "Jupyter", "VS Code"]
+  };
+
+  const experiences = [
+    {
+      title: "Software Engineer",
+      company: "University of Maryland",
+      period: "Aug 2022 - Present",
+      description: "2-3 Line Summary of role and achievements"
+    },
+    {
+      title: "Data Engineer",
+      company: "ZS Associates",
+      period: "Aug 2021 - Jul 2022",
+      description: "2-3 Line Summary of role and achievements"
+    },
+    {
+      title: "SDE",
+      company: "Freelance",
+      period: "Jan 2021 - Aug 2021",
+      description: "2-3 Line Summary of role and achievements"
+    }
+  ];
+
+  const projects = [
+    {
+      name: "Project One",
+      summary: "Brief project description (2 lines)",
+      link: "#"
+    },
+    {
+      name: "Project Two", 
+      summary: "Brief project description (2 lines)",
+      link: "#"
+    },
+    {
+      name: "Project Three",
+      summary: "Brief project description (2 lines)", 
+      link: "#"
+    },
+    {
+      name: "Project Four",
+      summary: "Brief project description (2 lines)",
+      link: "#"
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* Header */}
+      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              RHAND
+            </h1>
+            <nav className="hidden md:flex space-x-8">
+              <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+              <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+              <a href="#experience" className="text-gray-700 hover:text-blue-600 transition-colors">Experience</a>
+              <a href="#projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section id="home" className="pt-24 pb-20">
+        <div className="container mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+              RHAND TEJA PANKULET
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-600 mb-4">
+              Software Engineer | Data Engineer | Data Analyst
+            </p>
+            
+            {/* Profile Image Placeholder */}
+            <div className="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
+              <span className="text-gray-500 text-lg">My Picture</span>
+            </div>
+
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+              I am a passionate software engineer with expertise in data engineering and analysis. 
+              I love building scalable solutions and extracting insights from complex datasets.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex justify-center space-x-4 mb-8">
+              <Button variant="outline" size="icon" className="hover:bg-blue-50 hover:border-blue-300 transition-all">
+                <Linkedin className="h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="icon" className="hover:bg-gray-50 hover:border-gray-300 transition-all">
+                <Github className="h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="icon" className="hover:bg-blue-50 hover:border-blue-300 transition-all">
+                <Mail className="h-5 w-5" />
+              </Button>
+            </div>
+
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105">
+              View Resume
+            </Button>
+
+            <div className="mt-12 animate-bounce">
+              <ArrowDown className="h-6 w-6 mx-auto text-gray-400" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <h3 className="text-4xl font-bold text-center mb-16 text-gray-900">Skills</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-center text-xl font-bold text-blue-600">Languages</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {skills.languages.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-center text-xl font-bold text-purple-600">Data Science</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {skills.dataScience.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="bg-purple-50 text-purple-700 hover:bg-purple-100">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
+              <CardHeader>
+                <CardTitle className="text-center text-xl font-bold text-green-600">Tools</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {skills.tools.map((skill) => (
+                    <Badge key={skill} variant="secondary" className="bg-green-50 text-green-700 hover:bg-green-100">
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-6">
+          <h3 className="text-4xl font-bold text-center mb-16 text-gray-900">Experience</h3>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+              {experiences.map((exp, index) => (
+                <div key={index} className="relative pl-20 pb-12">
+                  <div className="absolute left-6 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-md"></div>
+                  <Card className="hover:shadow-lg transition-all duration-300 border-0 shadow-md">
+                    <CardHeader>
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-start">
+                        <div>
+                          <CardTitle className="text-xl font-bold text-gray-900">{exp.title}</CardTitle>
+                          <CardDescription className="text-lg font-medium text-blue-600">{exp.company}</CardDescription>
+                        </div>
+                        <Badge variant="outline" className="md:ml-4 mt-2 md:mt-0 w-fit">
+                          {exp.period}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-gray-700">{exp.description}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <h3 className="text-4xl font-bold text-center mb-16 text-gray-900">Projects</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {projects.map((project, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 border-0 shadow-md group cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {project.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 mb-4">{project.summary}</p>
+                  <Button variant="outline" className="group-hover:bg-blue-50 group-hover:border-blue-300 transition-all">
+                    View Link
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h4 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Contact
+            </h4>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Let's connect and discuss opportunities to work together
+            </p>
+            
+            <div className="flex justify-center space-x-4 mb-8">
+              <Button variant="outline" size="icon" className="bg-transparent border-gray-600 hover:bg-blue-600 hover:border-blue-600 transition-all">
+                <Linkedin className="h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="icon" className="bg-transparent border-gray-600 hover:bg-gray-700 hover:border-gray-500 transition-all">
+                <Github className="h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="icon" className="bg-transparent border-gray-600 hover:bg-blue-600 hover:border-blue-600 transition-all">
+                <Mail className="h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 mb-4 md:mb-0">
+                © 2024 Rhand Teja Pankulet. All rights reserved.
+              </p>
+              <div className="flex space-x-6">
+                <p className="text-gray-400">University of Maryland</p>
+                <p className="text-gray-400">Master in Software Engineering</p>
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="text-gray-400">Bachelor in Computer Science</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
