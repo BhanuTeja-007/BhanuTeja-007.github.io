@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,7 +11,9 @@ const Index = () => {
     description: "Software Engineer specializing in scalable systems, data pipelines, and AI/ML solutions. Proficient in Python, AWS, and distributed technologies, I transform complex problems into efficient, data-driven applications. Currently seeking full-time roles where I can leverage my expertise in backend development and generative AI to build impactful products.",
     email: "bhanuteja.panguluri@gmail.com",
     linkedin: "https://www.linkedin.com/in/bhanuteja-panguluri/",
-    github: "https://github.com/BhanuTeja-007"
+    github: "https://github.com/BhanuTeja-007",
+    profileImage: "/profile-picture.jpg", // Replace with your actual image file name
+    resumeFile: "/resume.pdf" // Replace with your actual resume file name
   };
 
   const education = {
@@ -108,9 +109,21 @@ const Index = () => {
               {personalInfo.title}
             </p>
             
-            {/* Profile Image Placeholder */}
-            <div className="w-48 h-48 mx-auto mb-8 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center border-4 border-white shadow-lg">
-              <span className="text-gray-500 text-lg">My Picture</span>
+            {/* Profile Image */}
+            <div className="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white shadow-lg">
+              <img 
+                src={personalInfo.profileImage} 
+                alt={`${personalInfo.name} Profile Picture`}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.nextElementSibling!.classList.remove('hidden');
+                }}
+              />
+              <div className="hidden w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                <span className="text-gray-500 text-lg">Upload Image</span>
+              </div>
             </div>
 
             <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -119,18 +132,36 @@ const Index = () => {
 
             {/* Social Links */}
             <div className="flex justify-center space-x-4 mb-8">
-              <Button variant="outline" size="icon" className="hover:bg-blue-50 hover:border-blue-300 transition-all">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-blue-50 hover:border-blue-300 transition-all"
+                onClick={() => window.open(personalInfo.linkedin, '_blank')}
+              >
                 <Linkedin className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-gray-50 hover:border-gray-300 transition-all">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-gray-50 hover:border-gray-300 transition-all"
+                onClick={() => window.open(personalInfo.github, '_blank')}
+              >
                 <Github className="h-5 w-5" />
               </Button>
-              <Button variant="outline" size="icon" className="hover:bg-blue-50 hover:border-blue-300 transition-all">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="hover:bg-blue-50 hover:border-blue-300 transition-all"
+                onClick={() => window.open(`mailto:${personalInfo.email}`, '_blank')}
+              >
                 <Mail className="h-5 w-5" />
               </Button>
             </div>
 
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105">
+            <Button 
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105"
+              onClick={() => window.open(personalInfo.resumeFile, '_blank')}
+            >
               View Resume
             </Button>
 
