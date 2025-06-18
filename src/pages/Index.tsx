@@ -9,72 +9,72 @@ const Index = () => {
   const personalInfo = {
     name: "BHANU TEJA PANGULURI",
     title: "Software Engineer | Data Engineer | Data Analyst",
-    description: "I am a passionate software engineer with expertise in data engineering and analysis. I love building scalable solutions and extracting insights from complex datasets.",
-    email: "your.email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    github: "https://github.com/yourusername"
+    description: "Software Engineer specializing in scalable systems, data pipelines, and AI/ML solutions. Proficient in Python, AWS, and distributed technologies, I transform complex problems into efficient, data-driven applications. Currently seeking full-time roles where I can leverage my expertise in backend development and generative AI to build impactful products.",
+    email: "bhanuteja.panguluri@gmail.com",
+    linkedin: "https://www.linkedin.com/in/bhanuteja-panguluri/",
+    github: "https://github.com/BhanuTeja-007"
   };
 
   const education = {
     masters: {
       degree: "Master in Software Engineering",
-      university: "University of Maryland",
-      logo: "/placeholder.svg" // Replace with actual UMD logo
+      university: "University of Maryland - College Park",
+      logo: "/UMD_logo.jpg" // Replace with actual UMD logo
     },
     bachelors: {
       degree: "Bachelor in Computer Science", 
-      university: "Your Bachelor University", // Edit this
-      logo: "/placeholder.svg" // Replace with actual university logo
+      university: "Chandigarh University", // Edit this
+      logo: "/CU_logo.jpg" // Replace with actual university logo
     }
   };
 
   const skills = {
-    languages: ["Python", "JavaScript", "SQL", "R", "Java"],
-    dataScience: ["Machine Learning", "Deep Learning", "Statistical Analysis", "Data Visualization", "Pandas", "NumPy"],
-    tools: ["Git", "Docker", "AWS", "Tableau", "Jupyter", "VS Code"]
+    languages: ["Python", "Java", "C/C++", "JavaScript", "SQL"],
+    dataScience: ["Git", "Docker", "AWS", "Kafka", "Hadoop", "Hive", "MongoDB", "PostgreSQL", "Snowflake", "System Design"],
+    tools: ["PySpark", "Databricks", "Airflow", "Tableau", "Power BI", "Machine Learning", "AI"]
   };
 
   const experiences = [
     {
       title: "Software Engineer",
       company: "University of Maryland",
-      period: "Aug 2022 - Present",
-      description: "2-3 Line Summary of role and achievements" // Edit this
+      period: "Aug 2023 - Present",
+      description: "Designed Python-based data pipelines and inventory optimization systems that reduced stockouts by 67% (15% → 5%) and improved reporting accuracy to 95%. Automated workflows using SQL and microservices architecture, saving 60+ engineering hours/month while enabling $20K in annual cost savings." // Edit this
     },
     {
       title: "Data Engineer",
       company: "ZS Associates",
-      period: "Aug 2021 - Jul 2022",
-      description: "2-3 Line Summary of role and achievements" // Edit this
+      period: "Aug 2021 - Jul 2023",
+      description: "Designed ML-powered dynamic targeting that drove $1M+ revenue growth. Automated 30% of ETL workflows using AWS/PySpark, reducing pipeline runtime by 42% (6 → 3.5 hrs) and saving 60+ hours monthly." // Edit this
     },
     {
       title: "SDE",
-      company: "Freelance",
+      company: "Toshiba",
       period: "Jan 2021 - Aug 2021",
-      description: "2-3 Line Summary of role and achievements" // Edit this
+      description: "Boosted medical imaging speed by 20% via CUDA-optimized algorithms in C++/Python. Improved diagnostic accuracy to 95% with Fourier transform/ML pipelines while strengthening code reliability by 10%." // Edit this
     }
   ];
 
   const projects = [
     {
-      name: "Project One", // Edit this
-      summary: "Brief project description (2 lines)", // Edit this
-      link: "#" // Add actual project link
+      name: "Scalable E-Commerce Platform on AWS", // Edit this
+      summary: "Engineered a scalable AWS microservices platform that boosted system reliability to 97% uptime and improved page speeds by 25%, handling 100K+ users seamlessly", // Edit this
+      link: "https://github.com/BhanuTeja-007/Scalable-and-Secure-E-commerce-Platform-on-AWS" // Add actual project link
     },
     {
-      name: "Project Two", // Edit this
-      summary: "Brief project description (2 lines)", // Edit this
-      link: "#" // Add actual project link
+      name: "SkillsBerg E-Learning Platform", // Edit this
+      summary: "Revamped the learning platform with React/Node.js, enabling 10K+ concurrent users while accelerating feature development by 30% through modular design.", // Edit this
+      link: "https://github.com/BhanuTeja-007" // Add actual project link
     },
     {
-      name: "Project Three", // Edit this
-      summary: "Brief project description (2 lines)", // Edit this
-      link: "#" // Add actual project link
+      name: "Uber Data Analysis", // Edit this
+      summary: "Developed data pipelines processing 1M+ trips that uncovered 15% efficiency gains in driver allocation, enabling data-driven fleet optimization decisions.", // Edit this
+      link: "https://github.com/BhanuTeja-007" // Add actual project link
     },
     {
-      name: "Project Four", // Edit this
-      summary: "Brief project description (2 lines)", // Edit this
-      link: "#" // Add actual project link
+      name: "IoT Smart Waste System", // Edit this
+      summary: "Built an IoT monitoring system with optimized routing that reduced garbage overflow incidents by 40% and lowered collection costs by 20%.", // Edit this
+      link: "https://github.com/BhanuTeja-007" // Add actual project link
     }
   ];
 
@@ -163,7 +163,7 @@ const Index = () => {
 
             <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
               <CardHeader>
-                <CardTitle className="text-center text-xl font-bold text-purple-600">Data Science</CardTitle>
+                <CardTitle className="text-center text-xl font-bold text-purple-600">Systems</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 justify-center">
