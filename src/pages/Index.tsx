@@ -79,6 +79,18 @@ const Index = () => {
     }
   ];
 
+  const handleResumeClick = () => {
+    console.log("Resume button clicked");
+    console.log("Trying to open:", personalInfo.resumeFile);
+    
+    // Try to open the resume
+    const resumeUrl = personalInfo.resumeFile;
+    console.log("Full URL:", window.location.origin + resumeUrl);
+    
+    // Open in new tab
+    window.open(resumeUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Header */}
@@ -160,7 +172,7 @@ const Index = () => {
 
             <Button 
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105"
-              onClick={() => window.open(personalInfo.resumeFile, '_blank')}
+              onClick={handleResumeClick}
             >
               View Resume
             </Button>
