@@ -1,3 +1,4 @@
+
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -96,7 +97,8 @@ const Index = () => {
     window.open(`mailto:${personalInfo.email}`, '_blank');
   };
 
-  const handleCopyEmail = async () => {
+  const handleCopyEmail = async (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent the email click from firing
     try {
       await navigator.clipboard.writeText(personalInfo.email);
       console.log("Email copied to clipboard");
@@ -181,13 +183,23 @@ const Index = () => {
                       variant="outline" 
                       size="icon" 
                       className="hover:bg-blue-50 hover:border-blue-300 transition-all"
-                      onClick={handleCopyEmail}
+                      onClick={handleEmailClick}
                     >
                       <Mail className="h-5 w-5" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Click to copy: {personalInfo.email}</p>
+                    <div className="flex items-center gap-2">
+                      <span>{personalInfo.email}</span>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0"
+                        onClick={handleCopyEmail}
+                      >
+                        📋
+                      </Button>
+                    </div>
                   </TooltipContent>
                 </Tooltip>
               </div>
@@ -350,13 +362,23 @@ const Index = () => {
                       variant="outline" 
                       size="icon" 
                       className="bg-transparent border-gray-600 hover:bg-blue-600 hover:border-blue-600 transition-all"
-                      onClick={handleCopyEmail}
+                      onClick={handleEmailClick}
                     >
                       <Mail className="h-5 w-5" />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p>Click to copy: {personalInfo.email}</p>
+                    <div className="flex items-center gap-2">
+                      <span>{personalInfo.email}</span>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 w-6 p-0"
+                        onClick={handleCopyEmail}
+                      >
+                        📋
+                      </Button>
+                    </div>
                   </TooltipContent>
                 </Tooltip>
               </div>
