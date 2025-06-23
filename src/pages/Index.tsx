@@ -40,20 +40,21 @@ const Index = () => {
     {
       title: "Software Engineer",
       company: "University of Maryland",
-      period: "Aug 2023 - Present",
-      description: "Designed Python-based data pipelines and inventory optimization systems that reduced stockouts by 67% (15% → 5%) and improved reporting accuracy to 95%. Automated workflows using SQL and microservices architecture, saving 60+ engineering hours/month while enabling $20K in annual cost savings." // Edit this
+      period: "Jul 2024 - Present",
+      description: "Implemented data-driven systems that improved inventory and procurement efficiency across departments.
+Automated financial reporting and analytics workflows, resulting in faster insights and 12% cost savings." // Edit this
     },
     {
       title: "Data Engineer",
       company: "ZS Associates",
       period: "Aug 2021 - Jul 2023",
-      description: "Designed ML-powered dynamic targeting that drove $1M+ revenue growth. Automated 30% of ETL workflows using AWS/PySpark, reducing pipeline runtime by 42% (6 → 3.5 hrs) and saving 60+ hours monthly." // Edit this
+      description: "Built scalable data pipelines and ML-driven targeting systems that improved sales performance and engagement; Led automation, dashboarding, and A/B testing efforts that enhanced platform adoption and drove $2M in revenue." // Edit this
     },
     {
       title: "SDE",
       company: "Toshiba",
       period: "Jan 2021 - Aug 2021",
-      description: "Boosted medical imaging speed by 20% via CUDA-optimized algorithms in C++/Python. Improved diagnostic accuracy to 95% with Fourier transform/ML pipelines while strengthening code reliability by 10%." // Edit this
+      description: "Optimized image reconstruction algorithms for MRI/CT systems using C++, CUDA, and Python; Improved code reliability and testing efficiency, accelerating delivery of critical healthcare imaging modules." // Edit this
     }
   ];
 
