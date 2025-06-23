@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -155,7 +154,7 @@ const Index = () => {
                 </div>
               </div>
 
-              <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed text-justify">
                 {personalInfo.description}
               </p>
 
