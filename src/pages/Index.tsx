@@ -9,7 +9,7 @@ const Index = () => {
   const personalInfo = {
     name: "BHANU TEJA PANGULURI",
     title: "Software Engineer | Data Engineer | Data Analyst",
-    description: "Software Engineer specializing in scalable systems, data pipelines, and AI/ML solutions. Proficient in Python, AWS, and distributed technologies, I transform complex problems into efficient, data-driven applications. Currently seeking full-time roles where I can leverage my expertise in backend development and generative AI to build impactful products.",
+    description: "I'm a Software Engineer who loves finding technical solutions to real business problems. Whether it's streamlining data pipelines, building scalable backend systems, or automating workflows, I focus on writing clean, reliable code that delivers impact. I've worked with enterprise teams across various domains and bring a mix of hands-on problem-solving and big-picture thinking. I aim to contribute my engineering experience to teams focused on building scalable systems, solving business-critical problems, and growing alongside thoughtful engineers.",
     email: "bhanuteja.panguluri@gmail.com",
     linkedin: "https://www.linkedin.com/in/bhanuteja-panguluri/",
     github: "https://github.com/BhanuTeja-007",
