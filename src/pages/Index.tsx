@@ -1,11 +1,14 @@
-import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useToast } from "@/hooks/use-toast";
 import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
+  const { toast } = useToast();
+
   // Editable content - modify these values before publishing
   const personalInfo = {
     name: "BHANU TEJA PANGULURI",
@@ -91,6 +94,18 @@ const Index = () => {
     console.log("Full URL:", window.location.origin + resumeUrl);
     
     window.open(resumeUrl, '_blank');
+  };
+
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${personalInfo.email}`;
+  };
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(personalInfo.email);
+    toast({
+      title: "Email Copied",
+      description: "Email address has been copied to clipboard",
+    });
   };
 
   return (
