@@ -1,3 +1,4 @@
+
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
+  console.log("Index component is rendering");
   const { toast } = useToast();
 
   // Editable content - modify these values before publishing
@@ -107,6 +109,8 @@ const Index = () => {
       description: "Email address has been copied to clipboard",
     });
   };
+
+  console.log("About to render Index component");
 
   return (
     <TooltipProvider>
