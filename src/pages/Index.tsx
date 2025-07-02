@@ -1,8 +1,9 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
   // Editable content - modify these values before publishing
@@ -31,9 +32,11 @@ const Index = () => {
   };
 
   const skills = {
-    languages: ["Python", "Java", "C/C++", "JavaScript", "SQL"],
-    dataScience: ["Git", "Docker", "AWS", "Kafka", "Hadoop", "Hive", "MongoDB", "PostgreSQL", "Snowflake", "System Design"],
-    tools: ["PySpark", "Databricks", "Airflow", "Tableau", "Power BI", "Machine Learning", "AI"]
+    languages: ["Python", "Java", "C/C++", "JavaScript", "R", "React"],
+    dataAndSystems: ["PySpark", "Hadoop", "Hive", "Kafka", "Databricks", "Power BI", "Tableau", "TensorFlow", "PyTorch", "LLMs"],
+    databases: ["MySQL", "PostgreSQL", "MongoDB", "Oracle", "Snowflake"],
+    cloudAndDevOps: ["AWS", "GCP", "Azure", "Docker", "Kubernetes", "Git"],
+    certifications: ["AWS Certified Cloud Practitioner", "IBM Big Data Engineer", "CodePath Advanced DSA"]
   };
 
   const experiences = [
@@ -84,26 +87,10 @@ const Index = () => {
     console.log("Resume button clicked");
     console.log("Trying to open:", personalInfo.resumeFile);
     
-    // Try to open the resume
     const resumeUrl = personalInfo.resumeFile;
     console.log("Full URL:", window.location.origin + resumeUrl);
     
-    // Open in new tab
     window.open(resumeUrl, '_blank');
-  };
-
-  const handleEmailClick = () => {
-    window.open(`mailto:${personalInfo.email}`, '_blank');
-  };
-
-  const handleCopyEmail = async (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent the email click from firing
-    try {
-      await navigator.clipboard.writeText(personalInfo.email);
-      console.log("Email copied to clipboard");
-    } catch (err) {
-      console.log("Failed to copy email");
-    }
   };
 
   return (
@@ -121,6 +108,7 @@ const Index = () => {
                 <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
                 <a href="#experience" className="text-gray-700 hover:text-blue-600 transition-colors">Experience</a>
                 <a href="#projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
+                <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
               </nav>
             </div>
           </div>
@@ -221,7 +209,7 @@ const Index = () => {
         <section id="skills" className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <h3 className="text-4xl font-bold text-center mb-16 text-gray-900">Skills</h3>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
                 <CardHeader>
                   <CardTitle className="text-center text-xl font-bold text-blue-600">Languages</CardTitle>
@@ -239,11 +227,11 @@ const Index = () => {
 
               <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
                 <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-purple-600">Systems</CardTitle>
+                  <CardTitle className="text-center text-xl font-bold text-purple-600">Data & Systems</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {skills.dataScience.map((skill) => (
+                    {skills.dataAndSystems.map((skill) => (
                       <Badge key={skill} variant="secondary" className="bg-purple-50 text-purple-700 hover:bg-purple-100">
                         {skill}
                       </Badge>
@@ -254,12 +242,42 @@ const Index = () => {
 
               <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
                 <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-green-600">Tools</CardTitle>
+                  <CardTitle className="text-center text-xl font-bold text-green-600">Databases</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 justify-center">
-                    {skills.tools.map((skill) => (
+                    {skills.databases.map((skill) => (
                       <Badge key={skill} variant="secondary" className="bg-green-50 text-green-700 hover:bg-green-100">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
+                <CardHeader>
+                  <CardTitle className="text-center text-xl font-bold text-orange-600">Cloud & DevOps</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {skills.cloudAndDevOps.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="bg-orange-50 text-orange-700 hover:bg-orange-100">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md lg:col-span-2">
+                <CardHeader>
+                  <CardTitle className="text-center text-xl font-bold text-red-600">Certifications</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 justify-center">
+                    {skills.certifications.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="bg-red-50 text-red-700 hover:bg-red-100">
                         {skill}
                       </Badge>
                     ))}
@@ -331,12 +349,15 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Contact Form Section */}
+        <ContactForm />
+
         {/* Footer */}
         <footer className="bg-gray-900 text-white py-16">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
               <h4 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Contact
+                Connect With Me
               </h4>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
                 Let's connect and discuss opportunities to work together
@@ -359,31 +380,6 @@ const Index = () => {
                 >
                   <Github className="h-5 w-5" />
                 </Button>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button 
-                      variant="outline" 
-                      size="icon" 
-                      className="bg-transparent border-gray-600 hover:bg-blue-600 hover:border-blue-600 transition-all"
-                      onClick={handleEmailClick}
-                    >
-                      <Mail className="h-5 w-5" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <div className="flex items-center gap-2">
-                      <span>{personalInfo.email}</span>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="h-6 w-6 p-0"
-                        onClick={handleCopyEmail}
-                      >
-                        📋
-                      </Button>
-                    </div>
-                  </TooltipContent>
-                </Tooltip>
               </div>
             </div>
 
