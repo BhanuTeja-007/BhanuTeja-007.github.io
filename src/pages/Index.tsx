@@ -82,24 +82,24 @@ const Index = () => {
 
   const projects = [
     {
-      name: "Scalable E-Commerce Platform on AWS", // Edit this
-      summary: "Engineered a scalable AWS microservices platform that boosted system reliability to 97% uptime and improved page speeds by 25%, handling 100K+ users seamlessly", // Edit this
-      link: "https://github.com/BhanuTeja-007/Scalable-and-Secure-E-commerce-Platform-on-AWS" // Add actual project link
+      name: "Scalable E-Commerce Platform on AWS",
+      summary: "I engineered a highly scalable e-commerce platform using AWS microservices, building a resilient architecture that significantly enhanced platform stability. My work directly improved the user experience by ensuring seamless performance, even during high-traffic periods.",
+      link: "https://github.com/BhanuTeja-007/Scalable-and-Secure-E-commerce-Platform-on-AWS"
     },
     {
-      name: "SkillsBerg E-Learning Platform", // Edit this
-      summary: "Revamped the learning platform with React/Node.js, enabling 10K+ concurrent users while accelerating feature development by 30% through modular design.", // Edit this
-      link: "https://github.com/BhanuTeja-007" // Add actual project link
+      name: "SkillsBerg E-Learning Platform",
+      summary: "I built the SkillsBerg e-learning platform from the ground up using a React/Node.js architecture, guided by SOLID principles and a thorough SADD (Software Architecture and Design Document). This approach resulted in a highly scalable and maintainable system, capable of supporting a large number of concurrent users and accelerating future feature development.",
+      link: "https://github.com/BhanuTeja-007"
     },
     {
-      name: "Uber Data Analysis", // Edit this
-      summary: "Developed data pipelines processing 1M+ trips that uncovered 15% efficiency gains in driver allocation, enabling data-driven fleet optimization decisions.", // Edit this
-      link: "https://github.com/BhanuTeja-007" // Add actual project link
+      name: "Uber Data Analysis",
+      summary: "I developed robust data pipelines to process and analyze a massive dataset of Uber trips. This project's primary function was to identify insights that directly enabled more efficient driver allocation, laying a data-driven foundation for optimizing resource management and improving service quality.",
+      link: "https://github.com/BhanuTeja-007"
     },
     {
-      name: "IoT Smart Waste System", // Edit this
-      summary: "Built an IoT monitoring system with optimized routing that reduced garbage overflow incidents by 40% and lowered collection costs by 20%.", // Edit this
-      link: "https://github.com/BhanuTeja-007" // Add actual project link
+      name: "IoT Smart Waste System",
+      summary: "I engineered an IoT monitoring system that uses real-time data from sensors to track waste levels in bins. The core functionality of this innovative solution is to optimize garbage collection routes, leading to a cleaner environment by preventing overflow and a more cost-effective operation by streamlining logistics.",
+      link: "https://github.com/BhanuTeja-007"
     }
   ];
 
