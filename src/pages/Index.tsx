@@ -37,18 +37,33 @@ const Index = () => {
   };
 
   const skills = {
-    languages: ["Python", "Java", "C/C++", "JavaScript", "R", "React"],
-    dataAndSystems: ["PySpark", "Hadoop", "Hive", "Kafka", "Databricks", "Power BI", "Tableau", "TensorFlow", "PyTorch", "LLMs"],
-    databases: ["MySQL", "PostgreSQL", "MongoDB", "Oracle", "Snowflake"],
-    cloudAndDevOps: ["AWS", "GCP", "Azure", "Docker", "Kubernetes", "Git"],
-    certifications: ["AWS Certified Cloud Practitioner", "IBM Big Data Engineer", "CodePath Advanced DSA"]
+    languages: ["Java", "Python", "C/C++", "Node.js", "JavaScript", "Scala", "PHP", "Bash"],
+    platforms: ["PostgreSQL", "MySQL", "SQL Server", "MongoDB", "DynamoDB", "Redis", "Elasticsearch", "Snowflake", "BigQuery", "Redshift", "Azure Synapse", "Databricks", "Amazon S3", "Azure Data Lake"],
+    pipelines: ["Apache Spark", "PySpark", "Kafka", "Apache Airflow", "dbt", "AWS Glue", "Azure Data Factory", "Google Dataflow", "Hadoop", "Hive"],
+    analytics: ["Power BI", "Tableau", "Exploratory Analysis", "AB Testing", "Time Series", "Regression", "Forecasting"],
+    architectureOps: ["System design", "Microservices", "REST", "GraphQL", "FastAPI", "OAuth2", "JWT", "Git", "CI/CD", "Docker", "Kubernetes", "Terraform", "Linux", "OpenTelemetry", "Prometheus", "Grafana", "Datadog", "AWS", "Azure", "GCP"]
   };
+
+  const certifications = [
+    {
+      name: "AWS Certified Cloud Practitioner",
+      link: "https://cp.certmetrics.com/amazon/en/public/verify/credential/ca7a26887ca940849ede7b02a2d120d5"
+    },
+    {
+      name: "CodePath Advanced Technical Interview Prep",
+      link: "https://drive.google.com/file/d/10K3bXdiqJ678ONaqAegVTrTCEDJT_jQj/view"
+    },
+    {
+      name: "Machine Learning with Big Data",
+      link: "https://www.coursera.org/account/accomplishments/verify/3ETNE3Y62HAV"
+    }
+  ];
 
   const experiences = [
     {
       title: "Software Engineer",
       company: "University of Maryland",
-      period: "Jul 2024 - Present",
+      period: "Aug 2023 - Present",
       description: "Implemented data-driven systems that improved inventory and procurement efficiency across departments. Automated financial reporting and analytics workflows, resulting in faster insights and 12% cost savings."
     },
     {
@@ -125,6 +140,7 @@ const Index = () => {
               <nav className="hidden md:flex space-x-8">
                 <a href="#home" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
                 <a href="#skills" className="text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+                <a href="#certifications" className="text-gray-700 hover:text-blue-600 transition-colors">Certifications</a>
                 <a href="#experience" className="text-gray-700 hover:text-blue-600 transition-colors">Experience</a>
                 <a href="#projects" className="text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
                 <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
@@ -228,81 +244,80 @@ const Index = () => {
         <section id="skills" className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <h3 className="text-4xl font-bold text-center mb-16 text-gray-900">Skills</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
-                <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-blue-600">Languages</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Languages</h4>
+                  <div className="space-y-2">
                     {skills.languages.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100">
-                        {skill}
-                      </Badge>
+                      <div key={skill} className="text-gray-700">{skill}</div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
-                <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-purple-600">Data & Systems</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {skills.dataAndSystems.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-purple-50 text-purple-700 hover:bg-purple-100">
-                        {skill}
-                      </Badge>
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Platforms</h4>
+                  <div className="space-y-2">
+                    {skills.platforms.map((skill) => (
+                      <div key={skill} className="text-gray-700">{skill}</div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
-                <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-green-600">Databases</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {skills.databases.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-green-50 text-green-700 hover:bg-green-100">
-                        {skill}
-                      </Badge>
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Pipelines</h4>
+                  <div className="space-y-2">
+                    {skills.pipelines.map((skill) => (
+                      <div key={skill} className="text-gray-700">{skill}</div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md">
-                <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-orange-600">Cloud & DevOps</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {skills.cloudAndDevOps.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-orange-50 text-orange-700 hover:bg-orange-100">
-                        {skill}
-                      </Badge>
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Analytics</h4>
+                  <div className="space-y-2">
+                    {skills.analytics.map((skill) => (
+                      <div key={skill} className="text-gray-700">{skill}</div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
 
-              <Card className="hover:shadow-lg transition-shadow border-0 shadow-md lg:col-span-2">
-                <CardHeader>
-                  <CardTitle className="text-center text-xl font-bold text-red-600">Certifications</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {skills.certifications.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="bg-red-50 text-red-700 hover:bg-red-100">
-                        {skill}
-                      </Badge>
+                <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 lg:col-span-2">
+                  <h4 className="text-xl font-semibold text-gray-900 mb-4">Architecture & Ops</h4>
+                  <div className="grid md:grid-cols-2 gap-2">
+                    {skills.architectureOps.map((skill) => (
+                      <div key={skill} className="text-gray-700">{skill}</div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications Section */}
+        <section id="certifications" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="container mx-auto px-6">
+            <h3 className="text-4xl font-bold text-center mb-16 text-gray-900">Certifications</h3>
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-1 gap-6">
+                {certifications.map((cert, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 border-0 shadow-md group">
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-center">
+                        <h4 className="text-xl font-semibold text-gray-900 mb-4 md:mb-0">{cert.name}</h4>
+                        <Button 
+                          variant="outline" 
+                          className="group-hover:bg-blue-50 group-hover:border-blue-300 transition-all w-fit"
+                          onClick={() => window.open(cert.link, '_blank')}
+                        >
+                          Verify Certificate
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
