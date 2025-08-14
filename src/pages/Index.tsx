@@ -368,17 +368,19 @@ const Index = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 mb-4">{project.summary}</p>
-                    <Button 
-                      variant="outline" 
-                      className="group-hover:bg-blue-50 group-hover:border-blue-300 transition-all"
-                      onClick={() => window.open(project.link, '_blank')}
-                    >
-                      View Link
-                    </Button>
+                    <p className="text-gray-700">{project.summary}</p>
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            <div className="text-center mt-12">
+              <Button 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full text-lg font-medium transition-all transform hover:scale-105"
+                onClick={() => window.open(personalInfo.github, '_blank')}
+              >
+                <Github className="h-5 w-5 mr-2" />
+                View All Projects on GitHub
+              </Button>
             </div>
           </div>
         </section>
