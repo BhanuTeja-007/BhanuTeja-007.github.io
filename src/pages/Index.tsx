@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import ContactForm from "@/components/ContactForm";
 
 const Index = () => {
-  console.log("Index component is rendering");
+  console.log("Index component is rendering - updated");
   const { toast } = useToast();
 
   // Editable content - modify these values before publishing
